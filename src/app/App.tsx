@@ -267,9 +267,8 @@ function Nav({ page, setPage }: { page: Page; setPage: (p: Page) => void }) {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-transparent"
+          }`}
       >
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
@@ -289,9 +288,8 @@ function Nav({ page, setPage }: { page: Page; setPage: (p: Page) => void }) {
               <button
                 key={l.key}
                 onClick={() => goto(l.key)}
-                className={`relative px-4 py-2 text-sm tracking-wider uppercase transition-colors cursor-pointer ${
-                  page === l.key ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                }`}
+                className={`relative px-4 py-2 text-sm tracking-wider uppercase transition-colors cursor-pointer ${page === l.key ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                  }`}
                 style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 600 }}
               >
                 {l.label}
@@ -336,9 +334,8 @@ function Nav({ page, setPage }: { page: Page; setPage: (p: Page) => void }) {
                 <button
                   key={l.key}
                   onClick={() => goto(l.key)}
-                  className={`text-left px-4 py-3 text-sm tracking-wider uppercase transition-colors border-b border-border/50 cursor-pointer ${
-                    page === l.key ? "text-primary" : "text-muted-foreground"
-                  }`}
+                  className={`text-left px-4 py-3 text-sm tracking-wider uppercase transition-colors border-b border-border/50 cursor-pointer ${page === l.key ? "text-primary" : "text-muted-foreground"
+                    }`}
                   style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 600 }}
                 >
                   {l.label}
@@ -747,11 +744,10 @@ function LojaPage({ setPage }: { setPage: (p: Page) => void }) {
             <button
               key={f.key}
               onClick={() => setFilter(f.key)}
-              className={`px-5 py-2 text-sm tracking-widest uppercase transition-all cursor-pointer ${
-                filter === f.key
-                  ? "bg-primary text-primary-foreground"
-                  : "border border-border text-muted-foreground hover:border-primary hover:text-primary"
-              }`}
+              className={`px-5 py-2 text-sm tracking-widest uppercase transition-all cursor-pointer ${filter === f.key
+                ? "bg-primary text-primary-foreground"
+                : "border border-border text-muted-foreground hover:border-primary hover:text-primary"
+                }`}
               style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700 }}
             >
               {f.label}
@@ -1195,8 +1191,8 @@ function ContatoPage({ setPage }: { setPage: (p: Page) => void }) {
             <div className="space-y-4">
               {[
                 { icon: Mail, label: "E-mail", value: "contato@nexodesk.com.br" },
-                { icon: Phone, label: "WhatsApp", value: "(11) 9 9999-0000" },
-                { icon: MapPin, label: "Localização", value: "São Paulo — SP, Brasil" },
+                { icon: Phone, label: "WhatsApp", value: "(79) 9 8136-7115" },
+                { icon: MapPin, label: "Localização", value: "Aracaju — SE, Brasil" },
               ].map((c, i) => (
                 <div key={i} className="flex items-start gap-4 p-4 bg-card neon-border rounded-sm">
                   <div className="w-10 h-10 border border-primary/40 flex items-center justify-center flex-shrink-0">
@@ -1221,18 +1217,21 @@ function ContatoPage({ setPage }: { setPage: (p: Page) => void }) {
               </p>
               <div className="flex gap-3">
                 {[
-                  { icon: Instagram, label: "@nexodesk" },
-                  { icon: Facebook, label: "Nexo Desk" },
-                  { icon: MessageCircle, label: "WhatsApp" },
+                  { icon: Instagram, label: "@nexodesk", href: "https://www.instagram.com/nexo.desk/" },
+                  { icon: Facebook, label: "Nexo Desk", href: "https://www.facebook.com/nexodesk" },
+                  { icon: MessageCircle, label: "WhatsApp", href: "https://wa.me/5579981367115" },
                 ].map((s, i) => (
-                  <button
+                  <a
                     key={i}
+                    href={s.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 border border-border text-muted-foreground hover:border-primary hover:text-primary transition-all text-sm"
                     style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 600 }}
                   >
                     <s.icon size={15} />
                     <span className="hidden sm:block">{s.label}</span>
-                  </button>
+                  </a>
                 ))}
               </div>
             </div>
@@ -1244,9 +1243,9 @@ function ContatoPage({ setPage }: { setPage: (p: Page) => void }) {
               </p>
               <div className="space-y-1">
                 {[
-                  ["Seg – Sex", "09:00 – 18:00"],
-                  ["Sábado", "09:00 – 13:00"],
-                  ["Domingo", "Fechado"],
+                  ["Seg – Sex", "07:30 – 17:30"],
+                  ["Sab – Dom", "Fechado"],
+
                 ].map(([day, hours]) => (
                   <div key={day} className="flex justify-between text-sm">
                     <span className="text-muted-foreground" style={{ fontFamily: "'Rajdhani', sans-serif" }}>{day}</span>
@@ -1317,10 +1316,10 @@ function Footer({ setPage }: { setPage: (p: Page) => void }) {
       </div>
       <div className="border-t border-border px-6 py-5 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
         <span className="text-xs text-muted-foreground" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-          © 2025 Nexo Desk — Todos os direitos reservados
+          © 2026 Nexo Desk — Todos os direitos reservados
         </span>
         <span className="text-xs text-muted-foreground/50" style={{ fontFamily: "'JetBrains Mono', monospace" }}>
-          Impressão 3D · FDM · SP, Brasil
+          Impressão 3D · FDM · SE, Brasil
         </span>
       </div>
     </footer>
