@@ -306,12 +306,17 @@ function Nav({ page, setPage }: { page: Page; setPage: (p: Page) => void }) {
 
           {/* CTA + mobile toggle */}
           <div className="flex items-center gap-3">
-            <NeonButton onClick={() => goto("loja")} className="hidden md:flex text-xs">
-              <ShoppingCart size={14} /> Loja
-            </NeonButton>
+            {/* Escondido no mobile via container div */}
+            <div className="hidden md:block">
+              <NeonButton onClick={() => goto("loja")} className="text-xs py-2 px-4">
+                <ShoppingCart size={14} /> Loja
+              </NeonButton>
+            </div>
+
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden text-foreground p-1"
+              className="md:hidden text-foreground p-2"
+              aria-label="Menu"
             >
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
